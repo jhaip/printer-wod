@@ -18,7 +18,17 @@
             }
           });
         });
-      })
+        console.log("requesting workout");
+        $.ajax({
+            url: "http://www.woddrive.com/woddrive-service-site/getWod?type=modal",
+            method: 'GET',
+        }).done(function(data) {
+            console.log(data);
+            console.log(data.name);
+        }).fail(function(response) {
+            console.error(response);
+        });
+      });
     </script>
   </head>
   <body class="preview"> <!-- 3. -->
