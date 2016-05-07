@@ -25,6 +25,9 @@
         }).done(function(data) {
             console.log(data);
             console.log(data.name);
+            var workoutName = "WOD";
+            if (data.name) { workoutName = data.name; }
+            $(".workout-title").text(workoutName);
         }).fail(function(response) {
             console.error(response);
         });
@@ -38,7 +41,7 @@
     </div>
     <div class="paper"> <!-- 4. -->
       <div class="content">
-        <h1>Your content</h1>
+        <h1 class="workout-title">Your content</h1>
         <p>(Put it here, yo.)</p>
       </div>
     </div>
